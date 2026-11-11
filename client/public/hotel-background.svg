@@ -1,0 +1,76 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 1000"
+     preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bce8ff"/>
+      <stop offset="55%" stop-color="#e8f7ff"/>
+      <stop offset="100%" stop-color="#f7fcff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Blue and white background -->
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+
+  <!-- Soft clouds -->
+  <g fill="#ffffff" opacity=".65">
+    <ellipse cx="240" cy="160" rx="120" ry="28"/>
+    <ellipse cx="190" cy="150" rx="55" ry="35"/>
+    <ellipse cx="285" cy="145" rx="65" ry="38"/>
+
+    <ellipse cx="1100" cy="240" rx="135" ry="25"/>
+    <ellipse cx="1050" cy="225" rx="60" ry="35"/>
+    <ellipse cx="1155" cy="220" rx="65" ry="38"/>
+  </g>
+
+  <!-- Airplane illustration -->
+  <g transform="translate(900 170) rotate(-12)"
+     fill="#579bbd" opacity=".65">
+    <path d="M0 18 L75 0 L100 8 L72 19
+             L58 43 L48 43 L52 23
+             L20 30 L12 42 L4 42 L7 27
+             L-12 29 L-18 23 Z"/>
+  </g>
+
+  <!-- Left palm tree -->
+  <g transform="translate(95 350)" opacity=".55">
+    <path d="M55 420 Q75 220 125 0"
+          fill="none" stroke="#8a704e" stroke-width="17"
+          stroke-linecap="round"/>
+
+    <g fill="#329b76">
+      <path d="M125 5 Q15 -65 -45 -15 Q25 -20 125 5Z"/>
+      <path d="M125 5 Q35 -100 5 -125 Q45 -50 125 5Z"/>
+      <path d="M125 5 Q105 -125 145 -155 Q125 -75 125 5Z"/>
+      <path d="M125 5 Q205 -110 255 -85 Q190 -35 125 5Z"/>
+      <path d="M125 5 Q255 -5 290 55 Q195 30 125 5Z"/>
+      <path d="M125 5 Q225 85 215 125 Q160 55 125 5Z"/>
+    </g>
+  </g>
+
+  <!-- Right palm tree -->
+  <g transform="translate(1500 440) scale(.8)" opacity=".5">
+    <path d="M55 420 Q75 220 125 0"
+          fill="none" stroke="#8a704e" stroke-width="17"
+          stroke-linecap="round"/>
+
+    <g fill="#329b76">
+      <path d="M125 5 Q15 -65 -45 -15 Q25 -20 125 5Z"/>
+      <path d="M125 5 Q35 -100 5 -125 Q45 -50 125 5Z"/>
+      <path d="M125 5 Q105 -125 145 -155 Q125 -75 125 5Z"/>
+      <path d="M125 5 Q205 -110 255 -85 Q190 -35 125 5Z"/>
+      <path d="M125 5 Q255 -5 290 55 Q195 30 125 5Z"/>
+    </g>
+  </g>
+
+  <!-- Soft decorative bottom waves -->
+  <path d="M0 900 Q400 820 800 900 T1600 880 V1000 H0Z"
+        fill="#a8e0f5" opacity=".25"/>
+
+  <path d="M0 945 Q400 870 800 945 T1600 920"
+        fill="none" stroke="#8bd0ec"
+        stroke-width="4" opacity=".3"/>
+
+</svg>

@@ -1,0 +1,22 @@
+{
+  "name": "hotel-app-server",
+  "version": "1.0.0",
+  "description": "Hotel listing API — Express + PostgreSQL with native SQL queries",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "db:schema": "node src/db/applySchema.js",
+    "db:seed": "node src/db/seed.js",
+    "db:admin": "node src/db/seedAdmin.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.1",
+    "pg": "^8.12.0"
+  }
+}
