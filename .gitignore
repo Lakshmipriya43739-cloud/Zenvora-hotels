@@ -17,6 +17,9 @@ server/uploads/*
 !server/uploads/seed/
 !server/uploads/.gitkeep
 
+# Client temporary uploads
+client/public/uploads/
+
 # Temporary and reference files
 files/
 *.log

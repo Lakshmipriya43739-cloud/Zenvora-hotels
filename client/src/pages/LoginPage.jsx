@@ -104,7 +104,7 @@ export default function LoginPage() {
               className="btn-gold w-100 btn-gold--lg mt-2"
               disabled={status === 'loading'}
             >
-              {status === 'loading' ? 'Authenticating…' : 'SIGN IN'}
+              {status === 'loading' ? 'Authenticating…' : 'Sign In'}
             </button>
           </form>
 

@@ -156,7 +156,7 @@ export default function Gallery({ items = [] }) {
                     onError={() => setBroken((b) => ({ ...b, [i]: true }))}
                   />
 
-                  {/* Card overlay with title, price and VIEW DETAILS button for the active card */}
+                  {/* Card overlay with title, price and View Details button for the active card */}
                   <div className="gx-card-glass">
                     <div className="gx-card-info">
                       <span className="gx-card-name" title={it.title}>{it.title}</span>
@@ -175,7 +175,7 @@ export default function Gallery({ items = [] }) {
                         className="btn-card-details gx-card-btn"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        VIEW DETAILS
+                        View Details
                       </Link>
                     )}
                   </div>

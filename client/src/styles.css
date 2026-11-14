@@ -1,6 +1,6 @@
 /* ==========================================================================
    ZENVORA — Luxury Hotels Stylesheet
-   Typography: Cinzel (headings) & Inter (body)
+   Typography: DM Sans (modern, readable, welcoming)
    Gold Accent: #AD8B3A | Charcoal: #141414 | Ivory: #FBF9F5
    ========================================================================== */
 
@@ -24,8 +24,10 @@
   --ink-muted: #78756e;
   --line: #e8e4dc;
 
-  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -56,7 +58,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 15.5px;
   line-height: 1.6;
   color: var(--ink);
   background-color: var(--ivory-bg);
@@ -82,11 +84,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--ink);
   margin: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
 }
 
 p {
@@ -118,11 +121,10 @@ p {
 .section-kicker {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
+  letter-spacing: 0.04em;
+  color: var(--gold-dark);
   margin-bottom: 0.6rem;
 }
 
@@ -132,9 +134,10 @@ p {
 
 .section-title {
   font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   color: var(--ink);
   line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 
 .section-desc {
@@ -211,10 +214,9 @@ p {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: #ffffff;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   padding: 0.8rem 1.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--gold-light);
@@ -232,13 +234,13 @@ p {
 }
 
 .btn-gold--sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.74rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
 }
 
 .btn-gold--lg {
-  padding: 1rem 2.2rem;
-  font-size: 0.88rem;
+  padding: 0.95rem 2.2rem;
+  font-size: 0.95rem;
 }
 
 /* 3D Luxury Gold Button for Hotel Card "View Details" */
@@ -250,10 +252,9 @@ p {
   background: linear-gradient(180deg, #c7a752 0%, #ad8b3a 52%, #8e6e22 100%);
   color: #ffffff !important;
   font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   padding: 0.55rem 1.15rem;
   border-radius: var(--radius-sm);
   border: 1px solid #7d601b;
@@ -294,10 +295,9 @@ p {
   background: transparent;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   padding: 0.8rem 1.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--gold);
@@ -313,12 +313,12 @@ p {
 
 .btn-luxury-outline--sm {
   padding: 0.5rem 1rem;
-  font-size: 0.74rem;
+  font-size: 0.82rem;
 }
 
 .btn-luxury-outline--xs {
   padding: 0.35rem 0.65rem;
-  font-size: 0.7rem;
+  font-size: 0.76rem;
 }
 
 .icon-btn-luxury {
@@ -395,18 +395,18 @@ p {
 }
 
 .brand-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   color: #ffffff;
   line-height: 1;
 }
 
 .brand-sub {
   font-family: var(--font-sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.28em;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
   color: var(--gold-light);
   margin-top: 2px;
 }
@@ -414,16 +414,15 @@ p {
 .luxury-nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
 }
 
 .luxury-nav-link {
   font-family: var(--font-sans);
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.88);
   padding: 0.3rem 0;
   position: relative;
   transition: var(--transition);
@@ -462,8 +461,8 @@ p {
   align-items: center;
   gap: 0.6rem;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.82rem;
-  letter-spacing: 0.05em;
+  font-size: 0.86rem;
+  letter-spacing: 0.01em;
 }
 
 .auth-link {
@@ -483,7 +482,7 @@ p {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: #ffffff;
 }
 
@@ -492,12 +491,11 @@ p {
 }
 
 .role-pill {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.55rem;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .role-pill--admin {
@@ -515,7 +513,7 @@ p {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
@@ -529,7 +527,7 @@ p {
 
 .btn-book-stay {
   padding: 0.65rem 1.4rem;
-  font-size: 0.76rem;
+  font-size: 0.86rem;
 }
 
 .mobile-hamburger {
@@ -659,27 +657,28 @@ p {
 
 .hero-badge__text {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.05em;
   color: var(--gold-light);
 }
 
 .hero-luxury__title {
   font-size: clamp(2.3rem, 5.5vw, 4.2rem);
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   color: #ffffff;
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
   margin-bottom: 1.5rem;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-luxury__title span {
   color: var(--gold-light);
-  font-style: italic;
-  font-family: 'Playfair Display', var(--font-serif);
-  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-heading);
+  font-weight: 600;
 }
 
 .hero-luxury__desc {
@@ -688,7 +687,7 @@ p {
   line-height: 1.75;
   max-width: 740px;
   margin: 0 auto 2.5rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .hero-luxury__actions {
@@ -738,12 +737,11 @@ p {
 }
 
 .search-field__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gold-dark);
   margin-bottom: 0.25rem;
-  text-transform: uppercase;
 }
 
 .search-field__input {
@@ -855,33 +853,32 @@ p {
 
 .dest-card__badge {
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--gold-light);
   margin-bottom: 0.35rem;
 }
 
 .dest-card__title {
   font-size: 1.6rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
   color: #ffffff;
   margin-bottom: 0.2rem;
 }
 
 .dest-card__subtitle {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0.85rem;
 }
 
 .dest-card__link {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--gold-light);
   transition: var(--transition);
 }
@@ -1006,64 +1003,24 @@ p {
 }
 
 .price-label {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
   color: var(--ink-muted);
 }
 
 .price-val {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--gold);
 }
 
 .price-sub {
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   color: var(--ink-muted);
 }
 
-/* --------------------------------------------------------------------------
-   7. Section: Experiences & Services
-   -------------------------------------------------------------------------- */
-.experiences-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
 
-.experience-item {
-  background: var(--dark-surface);
-  border: 1px solid rgba(173, 139, 58, 0.25);
-  border-radius: var(--radius-md);
-  padding: 2.2rem 1.75rem;
-  text-align: center;
-  transition: var(--transition);
-}
-
-.experience-item:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.experience-item__icon {
-  font-size: 2.4rem;
-  margin-bottom: 1.25rem;
-}
-
-.experience-item__title {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.experience-item__desc {
-  font-size: 0.88rem;
-  color: #a8a49c;
-  line-height: 1.65;
-}
 
 /* --------------------------------------------------------------------------
    8. Section: Why Choose Zenvora?
@@ -1155,67 +1112,6 @@ p {
   line-height: 1.4;
 }
 
-/* --------------------------------------------------------------------------
-   9. Section: Newsletter
-   -------------------------------------------------------------------------- */
-.section-newsletter {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a1a 100%);
-}
-
-.newsletter-card {
-  max-width: 780px;
-  margin: auto;
-  text-align: center;
-  border: 1px solid rgba(173, 139, 58, 0.3);
-  border-radius: var(--radius-lg);
-  padding: 3.5rem 2rem;
-  background: rgba(26, 26, 26, 0.75);
-  backdrop-filter: blur(10px);
-}
-
-.newsletter-title {
-  color: #ffffff;
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  margin: 0.5rem 0 1rem;
-}
-
-.newsletter-desc {
-  color: #c4c1b9;
-  font-size: 0.98rem;
-  max-width: 580px;
-  margin: 0 auto 2rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 0.75rem;
-  max-width: 560px;
-  margin: auto;
-}
-
-.newsletter-input {
-  flex: 1;
-  padding: 0.9rem 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-sm);
-  color: #ffffff;
-  font-size: 0.92rem;
-  outline: none;
-  transition: var(--transition);
-}
-
-.newsletter-input:focus {
-  border-color: var(--gold);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.newsletter-privacy {
-  font-size: 0.74rem;
-  color: #8a8880;
-  margin-top: 1rem;
-}
 
 /* --------------------------------------------------------------------------
    10. Premium Footer (Taj-style)
@@ -1242,9 +1138,9 @@ p {
 }
 
 .footer-gold-seal {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   color: var(--gold);
 }
 
@@ -1252,7 +1148,7 @@ p {
   font-size: 1.05rem;
   color: var(--gold-light);
   margin-bottom: 1.5rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
 }
 
 .footer-links {
@@ -1474,8 +1370,8 @@ p {
 
 .results-badge {
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--gold);
+  letter-spacing: 0.02em;
+  color: var(--gold-dark);
 }
 
 /* 4-col Responsive Grid for Hotels */
@@ -1592,13 +1488,12 @@ p {
 }
 
 .price-lead {
-  font-size: 0.68rem;
-  text-transform: uppercase;
+  font-size: 0.74rem;
   color: var(--ink-muted);
 }
 
 .price-amount {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--gold);
@@ -1662,10 +1557,9 @@ p {
   align-items: center;
   gap: 0.4rem;
   color: var(--gold-light);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin-bottom: 1.2rem;
 }
 
@@ -1684,10 +1578,10 @@ p {
   background: rgba(18, 18, 18, 0.85);
   backdrop-filter: blur(4px);
   color: var(--gold-light);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(173, 139, 58, 0.35);
 }
@@ -1760,10 +1654,9 @@ p {
 }
 
 .meta-label {
-  font-size: 0.74rem;
-  text-transform: uppercase;
+  font-size: 0.78rem;
   color: var(--ink-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
 }
 
 .meta-val {
@@ -1804,36 +1697,112 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Homepage Facilities & Amenities Section
+   Homepage Facilities & Amenities Section (Clean Black Theme)
    -------------------------------------------------------------------------- */
+.section-facilities--dark {
+  background-color: #111111 !important;
+  color: #ffffff;
+  border-top: 1px solid #222222;
+  border-bottom: 1px solid #222222;
+  padding: 5.5rem 0;
+}
+
+.facilities-kicker {
+  display: inline-block;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #C5A04A;
+  margin-bottom: 0.6rem;
+}
+
+.facilities-title {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.facilities-divider {
+  width: 44px;
+  height: 2px;
+  background: #C5A04A;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.facilities-desc {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #B8B8B8;
+  max-width: 680px;
+  margin: 0.85rem auto 0;
+  line-height: 1.6;
+}
+
 .facilities-homepage-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  margin-top: 3.5rem;
 }
 
 .facility-card {
   display: flex;
   align-items: flex-start;
-  gap: 1.1rem;
-  padding: 1.35rem 1.25rem;
-  background: #ffffff;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  gap: 1.15rem;
+  padding: 1.5rem 1.35rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333333;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .facility-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--gold);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  background-color: #202020;
+  border-color: #4a4a4a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.facility-card__icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(197, 160, 74, 0.08);
+  border: 1px solid rgba(197, 160, 74, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.facility-card:hover .facility-card__icon-wrap {
+  background: rgba(197, 160, 74, 0.14);
+  border-color: rgba(197, 160, 74, 0.4);
 }
 
 .facility-card__icon {
-  font-size: 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #C5A04A;
   line-height: 1;
-  flex-shrink: 0;
+}
+
+.facility-card__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #C5A04A;
+  display: block;
 }
 
 .facility-card__info {
@@ -1842,17 +1811,22 @@ p {
 }
 
 .facility-card__title {
-  font-family: var(--font-sans);
-  font-size: 0.98rem;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
+  color: #EAEAEA;
+  margin: 0 0 0.35rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .facility-card__desc {
-  font-size: 0.82rem;
-  color: var(--ink-light);
-  line-height: 1.5;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #B8B8B8;
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* Sidebar Booking Card */
@@ -1869,10 +1843,9 @@ p {
 .booking-card-kicker {
   display: block;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -1883,7 +1856,7 @@ p {
 }
 
 .booking-price-val {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--gold);
@@ -2051,14 +2024,13 @@ p {
 }
 
 .stat-label {
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
   color: var(--ink-muted);
 }
 
 .stat-val {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
   color: var(--ink);
@@ -2113,10 +2085,9 @@ p {
   text-align: left;
   padding: 0.9rem 1rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--gold-dark);
   border-bottom: 2px solid var(--line);
   background: var(--ivory-bg);
@@ -2145,7 +2116,7 @@ p {
 }
 
 .table-price {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: 700;
   color: var(--gold-dark);
   font-size: 1.05rem;
@@ -2197,10 +2168,9 @@ p {
 
 .label {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--ink);
   margin-bottom: 0.45rem;
 }
@@ -2326,15 +2296,16 @@ p {
 }
 
 .auth-brand-name {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.05em;
   margin-top: 0.5rem;
   line-height: 1;
 }
 
 .auth-brand-tag {
-  font-size: 0.62rem;
-  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   color: var(--gold);
   margin-top: 3px;
 }
@@ -2375,10 +2346,9 @@ p {
 }
 
 .demo-title {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--gold-dark);
 }
 
@@ -2399,10 +2369,9 @@ p {
   background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold-dark);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   padding: 0.4rem 0.75rem;
   border-radius: 3px;
   cursor: pointer;
@@ -2432,7 +2401,6 @@ p {
 
   .destinations-grid,
   .featured-hotels-grid,
-  .experiences-grid,
   .facilities-homepage-grid,
   .luxury-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2487,10 +2455,22 @@ p {
 
   .destinations-grid,
   .featured-hotels-grid,
-  .experiences-grid,
   .facilities-homepage-grid,
   .luxury-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-facilities--dark {
+    padding: 3.5rem 0;
+  }
+
+  .facilities-homepage-grid {
+    margin-top: 2.25rem;
+    gap: 1rem;
+  }
+
+  .facility-card {
+    padding: 1.2rem 1.1rem;
   }
 
   .admin-stats-grid {
@@ -2510,13 +2490,6 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-btn {
-    width: 100%;
-  }
 
   .hotel-meta-grid {
     grid-template-columns: 1fr;
@@ -2920,15 +2893,15 @@ p {
   display: block;
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.05em;
   font-weight: 700;
   color: #f7eed8;
 }
 
 .digital-card__sub {
   display: block;
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   color: var(--gold-light);
   font-weight: 600;
 }
@@ -2938,10 +2911,9 @@ p {
   color: #ffffff;
   padding: 0.3rem 0.85rem;
   border-radius: 20px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -2979,8 +2951,8 @@ p {
 }
 
 .digital-card__id-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
   color: #a4beaf;
   display: block;
   margin-bottom: 0.25rem;
@@ -2989,7 +2961,7 @@ p {
 .digital-card__id-val {
   font-family: var(--font-heading);
   font-size: 1.35rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   color: #f7eed8;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -3008,8 +2980,8 @@ p {
 .digital-card__holder .card-label,
 .digital-card__meta .card-label {
   display: block;
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
   color: #9cb5a6;
   margin-bottom: 0.15rem;
 }
@@ -3017,15 +2989,14 @@ p {
 .digital-card__holder .card-name {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   color: #ffffff;
-  text-transform: uppercase;
 }
 
 .digital-card__meta .card-val {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--gold-light);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
 }
 
 .digital-card__status {
@@ -3048,10 +3019,10 @@ p {
 }
 
 .digital-card__status .status-text {
-  font-size: 0.64rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 600;
   color: #86efac;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
 }
 
 .membership-actions-row {
@@ -3172,7 +3143,499 @@ p {
   }
   .digital-card__id-val {
     font-size: 1.1rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
   }
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ZENVORA RESERVATIONS & MY BOOKINGS SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.status-badge--pending {
+  background: rgba(173, 139, 58, 0.12);
+  color: #c5a85a;
+  border: 1px solid rgba(173, 139, 58, 0.35);
+}
+
+.status-badge--confirmed {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.status-badge--completed {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.status-badge--cancelled {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* Bookings List */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.booking-card {
+  display: grid;
+  grid-template-columns: 240px 1fr 220px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.booking-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.booking-card__media {
+  position: relative;
+  height: 100%;
+  min-height: 180px;
+}
+
+.booking-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.booking-card__media-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+}
+
+.booking-card__body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.booking-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.booking-ref-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  font-weight: 600;
+  display: block;
+}
+
+.booking-ref-code {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.booking-date-sub {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+
+.booking-hotel-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0.85rem;
+  color: var(--ink);
+}
+
+.booking-hotel-title a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.booking-hotel-title a:hover {
+  color: var(--gold);
+}
+
+.booking-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--bg);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.booking-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.booking-meta-item .meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  letter-spacing: 0.05em;
+}
+
+.booking-meta-item .meta-val {
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+
+.booking-meta-arrow {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.booking-special-requests {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  background: rgba(173, 139, 58, 0.06);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-xs);
+  border-left: 2px solid var(--gold);
+}
+
+.booking-card__aside {
+  padding: 1.25rem 1.5rem;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking-price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-price-block .price-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  letter-spacing: 0.05em;
+}
+
+.booking-price-block .price-figure {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  margin: 0.2rem 0;
+}
+
+.booking-price-block .price-tax {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+}
+
+.booking-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Modal Pricing Preview */
+.booking-price-preview {
+  margin: 1rem 0;
+  padding: 0.85rem 1.15rem;
+  background: rgba(173, 139, 58, 0.08);
+  border: 1px solid rgba(173, 139, 58, 0.25);
+  border-radius: var(--radius-sm);
+}
+
+.price-preview-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.price-preview-line strong {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--gold-light);
+}
+
+.price-preview-note {
+  font-size: 0.76rem;
+  color: var(--ink-light);
+  margin-top: 0.35rem;
+}
+
+/* Confirmation Badge & Summary Box */
+.booking-crown-icon {
+  font-size: 2.8rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.booking-confirmation-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.65rem 1.5rem;
+  background: rgba(173, 139, 58, 0.12);
+  border: 1px solid rgba(173, 139, 58, 0.4);
+  border-radius: var(--radius-sm);
+}
+
+.booking-confirmation-badge .conf-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  letter-spacing: 0.08em;
+}
+
+.booking-confirmation-badge .conf-code {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  margin-top: 0.2rem;
+}
+
+.booking-summary-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--border);
+  color: var(--ink-light);
+}
+
+.summary-row strong {
+  color: var(--ink);
+}
+
+.summary-row--total {
+  border-bottom: none;
+  padding-top: 0.6rem;
+  font-size: 1rem;
+}
+
+.summary-row--total strong {
+  color: var(--gold-light);
+  font-size: 1.15rem;
+  font-family: var(--font-heading);
+}
+
+/* Voucher Modal */
+.modal-luxury--wide {
+  max-width: 680px;
+}
+
+.voucher-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.85rem;
+}
+
+.voucher-ref-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.voucher-ref-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+}
+
+.voucher-ref-number {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.voucher-col {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.voucher-col__title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  color: var(--gold-light);
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+}
+
+.voucher-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 0.28rem 0;
+  color: var(--ink-light);
+}
+
+.voucher-row strong {
+  color: var(--ink);
+  text-align: right;
+}
+
+.voucher-row--total strong {
+  font-size: 0.98rem;
+}
+
+.voucher-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+}
+
+/* Admin Dashboard Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.admin-tab-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink-light);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.admin-tab-btn:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.admin-tab-btn.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0b0b0b;
+  font-weight: 600;
+}
+
+.admin-tab-pill {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.admin-filters-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.admin-status-select {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.84rem;
+  min-width: 140px;
+}
+
+.admin-status-dropdown {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.admin-status-dropdown:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .booking-card {
+    grid-template-columns: 1fr;
+  }
+  .booking-card__media {
+    min-height: 200px;
+  }
+  .booking-card__aside {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .voucher-grid {
+    grid-template-columns: 1fr;
+  }
+}

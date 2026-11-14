@@ -38,3 +38,38 @@ export const hotelsApi = {
     fetch(`/api/hotels/${id}`, { method: 'DELETE', headers: authHeaders() }).then(handle),
 };
 
+export const reservationsApi = {
+  create: (data) =>
+    fetch('/api/reservations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...authHeaders() },
+      body: JSON.stringify(data),
+    }).then(handle),
+  listMy: () =>
+    fetch('/api/reservations/my', {
+      headers: authHeaders(),
+    }).then(handle),
+  getMy: (id) =>
+    fetch(`/api/reservations/my/${id}`, {
+      headers: authHeaders(),
+    }).then(handle),
+  cancelMy: (id) =>
+    fetch(`/api/reservations/my/${id}/cancel`, {
+      method: 'PATCH',
+      headers: authHeaders(),
+    }).then(handle),
+  adminList: (params) =>
+    fetch(`/api/admin/reservations${queryString(params || {})}`, {
+      headers: authHeaders(),
+    }).then(handle),
+  adminGet: (id) =>
+    fetch(`/api/admin/reservations/${id}`, {
+      headers: authHeaders(),
+    }).then(handle),
+  adminUpdateStatus: (id, status) =>
+    fetch(`/api/admin/reservations/${id}/status`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', ...authHeaders() },
+      body: JSON.stringify({ status }),
+    }).then(handle),
+};

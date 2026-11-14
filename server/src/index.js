@@ -7,6 +7,8 @@ const cors = require('cors');
 const hotelRoutes = require('./routes/hotels');
 const authRoutes  = require('./routes/auth');
 const membershipRoutes = require('./routes/membership');
+const reservationRoutes = require('./routes/reservations');
+const adminReservationRoutes = require('./routes/adminReservations');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -27,6 +29,8 @@ app.get('/api/health', (_req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/hotels', hotelRoutes);
 app.use('/api/membership', membershipRoutes);
+app.use('/api/reservations', reservationRoutes);
+app.use('/api/admin/reservations', adminReservationRoutes);
 
 // anything else under /api is a typo, say so clearly
 app.use('/api', (_req, res) => {

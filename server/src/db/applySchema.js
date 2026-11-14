@@ -1,4 +1,4 @@
-// Applies both hotels and users schema to the database.
+// Applies hotels, users, membership and reservations schema to the database.
 // Run with: npm run db:schema
 
 require('dotenv').config();
@@ -10,6 +10,7 @@ async function applySchema() {
   const hotelsSQL = fs.readFileSync(path.join(__dirname, 'schema.sql'), 'utf8');
   const usersSQL = fs.readFileSync(path.join(__dirname, 'users.sql'), 'utf8');
   const membershipSQL = fs.readFileSync(path.join(__dirname, 'membership.sql'), 'utf8');
+  const reservationsSQL = fs.readFileSync(path.join(__dirname, 'reservations.sql'), 'utf8');
 
   const client = await pool.connect();
   try {
@@ -19,6 +20,8 @@ async function applySchema() {
     console.log('Schema applied: table "users" is ready.');
     await client.query(membershipSQL);
     console.log('Schema applied: table "memberships" is ready.');
+    await client.query(reservationsSQL);
+    console.log('Schema applied: table "reservations" is ready.');
   } finally {
     client.release();
   }

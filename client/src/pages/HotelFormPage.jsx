@@ -289,7 +289,7 @@ export default function HotelFormPage() {
                 Cancel
               </Link>
               <button type="submit" className="btn-gold" disabled={saving}>
-                {saving ? 'Saving to Database…' : isEdit ? 'Save Hotel Changes' : 'Enroll Hotel'}
+                {saving ? 'Saving to Database…' : isEdit ? 'Save Hotel Changes' : 'Add Hotel'}
               </button>
             </div>
           </form>

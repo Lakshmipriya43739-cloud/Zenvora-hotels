@@ -121,7 +121,7 @@ export default function HotelListPage() {
       {/* Listing Page Header Banner */}
       <div className="listing-banner">
         <div className="container listing-banner__content">
-          <span className="section-kicker section-kicker--gold">OUR HOTELS</span>
+          <span className="section-kicker section-kicker--gold">Our Hotels</span>
           <h1 className="listing-banner__title">Luxury Hotels &amp; Suites</h1>
           <div className="gold-ornament" />
           <p className="listing-banner__subtitle">
@@ -216,7 +216,7 @@ export default function HotelListPage() {
                   className="view-btn view-btn--active"
                   title="3D Gallery View"
                 >
-                  <CubeIcon /> 3D GALLERY
+                  <CubeIcon /> 3D Gallery
                 </button>
               </div>
 
@@ -235,7 +235,7 @@ export default function HotelListPage() {
           <span className="results-count">
             Showing {items.length > 0 ? offset + 1 : 0}–{Math.min(offset + PAGE_SIZE, total)} of {total} Hotels
           </span>
-          <span className="results-badge">PAGE {filters.page} OF {Math.max(1, Math.ceil(total / PAGE_SIZE))}</span>
+          <span className="results-badge">Page {filters.page} of {Math.max(1, Math.ceil(total / PAGE_SIZE))}</span>
         </div>
 
         {/* Content Section */}

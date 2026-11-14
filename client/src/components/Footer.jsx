@@ -22,7 +22,7 @@ export default function Footer() {
 
             <p className="footer-philosophy">
               A peerless symbol of luxury hospitality, revered globally for elegant architecture,
-              impeccable heritage preservation, and unforgettable hotel experiences.
+              impeccable heritage preservation, and unforgettable hotel stays.
             </p>
 
             <div className="footer-gold-seal">
@@ -48,11 +48,7 @@ export default function Footer() {
             <h4 className="footer-col-title">Hotels &amp; Stays</h4>
             <ul className="footer-links">
               <li><Link to="/hotels">All 12 Hotels</Link></li>
-              <li><a href="/#offers">Exclusive Offers</a></li>
-              <li><a href="/#experiences">Bespoke Butler Service</a></li>
-              <li><a href="/#experiences">Signature Jiva Spa</a></li>
-              <li><a href="/#experiences">Fine Dining</a></li>
-              <li><Link to="/register">Privilege Circle</Link></li>
+              <li><a href="/#facilities">Included Facilities</a></li>
             </ul>
           </div>
 

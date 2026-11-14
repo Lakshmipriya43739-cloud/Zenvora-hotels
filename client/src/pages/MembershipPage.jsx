@@ -131,7 +131,7 @@ export default function MembershipPage() {
       {/* Header Banner */}
       <div className="membership-hero-banner">
         <div className="container text-center">
-          <span className="section-kicker section-kicker--gold">ZENVORA PRIVILEGE CIRCLE</span>
+          <span className="section-kicker section-kicker--gold">Zenvora Privilege Circle</span>
           <h1 className="membership-hero-title">My Digital Membership</h1>
           <p className="membership-hero-subtitle">
             Welcome, <strong>{membership.member_name}</strong>. Your personalized digital credentials and elite privileges.
@@ -173,7 +173,7 @@ export default function MembershipPage() {
                     </div>
                     <div>
                       <span className="digital-card__name">ZENVORA</span>
-                      <span className="digital-card__sub">PRIVILEGE CIRCLE</span>
+                      <span className="digital-card__sub">Privilege Circle</span>
                     </div>
                   </div>
 
@@ -207,13 +207,13 @@ export default function MembershipPage() {
                 {/* Card Bottom Row: Name, Joined, Status */}
                 <div className="digital-card__footer">
                   <div className="digital-card__holder">
-                    <span className="card-label">PRIVILEGE CARDHOLDER</span>
+                    <span className="card-label">Privilege Cardholder</span>
                     <strong className="card-name">{membership.member_name}</strong>
                   </div>
 
                   <div className="digital-card__meta">
-                    <span className="card-label">VALID THRU</span>
-                    <strong className="card-val">LIFETIME</strong>
+                    <span className="card-label">Valid Thru</span>
+                    <strong className="card-val">Lifetime</strong>
                   </div>
 
                   <div className="digital-card__status">
@@ -242,7 +242,7 @@ export default function MembershipPage() {
           {/* Right Column: Key Membership Details Box */}
           <div className="membership-info-column">
             <div className="luxury-box">
-              <span className="section-kicker section-kicker--gold">CREDENTIALS OVERVIEW</span>
+              <span className="section-kicker section-kicker--gold">Credentials Overview</span>
               <h2 className="luxury-box__title">Membership Summary</h2>
               <div className="gold-ornament" style={{ margin: '0.8rem 0 1.25rem' }} />
 
@@ -285,7 +285,7 @@ export default function MembershipPage() {
 
         {/* Benefits Section */}
         <div className="luxury-box mt-3">
-          <span className="section-kicker section-kicker--gold">EXCLUSIVE PRIVILEGES</span>
+          <span className="section-kicker section-kicker--gold">Exclusive Privileges</span>
           <h2 className="luxury-box__title">Included Membership Benefits</h2>
           <div className="gold-ornament" style={{ margin: '0.8rem 0 1.5rem' }} />
 

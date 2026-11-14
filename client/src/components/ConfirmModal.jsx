@@ -1,6 +1,15 @@
 import { useEffect } from 'react';
 
-export default function ConfirmModal({ open, title, message, busy = false, onCancel, onConfirm }) {
+export default function ConfirmModal({
+  open,
+  title,
+  message,
+  busy = false,
+  confirmLabel = 'Delete',
+  confirmVariant = 'btn--danger',
+  onCancel,
+  onConfirm,
+}) {
   useEffect(() => {
     if (!open) return undefined;
     const onKey = (event) => {
@@ -21,8 +30,8 @@ export default function ConfirmModal({ open, title, message, busy = false, onCan
           <button type="button" className="btn btn--outline" onClick={onCancel} disabled={busy}>
             Cancel
           </button>
-          <button type="button" className="btn btn--danger" onClick={onConfirm} disabled={busy}>
-            {busy ? 'Deleting…' : 'Delete'}
+          <button type="button" className={`btn ${confirmVariant}`} onClick={onConfirm} disabled={busy}>
+            {busy ? `${confirmLabel}…` : confirmLabel}
           </button>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function RegisterPage() {
   const [fieldErrors, setFieldErrors] = useState({});
 
   useEffect(() => {
-    if (user) navigate('/membership', { replace: true });
+    if (user) navigate('/', { replace: true });
   }, [user, navigate]);
 
   useEffect(() => {
@@ -56,15 +56,15 @@ export default function RegisterPage() {
     }
     const resultAction = await dispatch(registerUser({ name: form.name, email: form.email, password: form.password }));
     if (registerUser.fulfilled.match(resultAction)) {
-      dispatch(showToast('Welcome to Zenvora! Your digital membership card is active.'));
-      navigate('/membership', { replace: true });
+      dispatch(showToast('Welcome to Zenvora! Your account has been created.'));
+      navigate('/', { replace: true });
     }
   };
 
   return (
     <>
       <Helmet>
-        <title>Join Zenvora Privilege Circle | Luxury Hotels</title>
+        <title>Register | Zenvora Luxury Hotels</title>
       </Helmet>
 
       <div className="auth-luxury-wrap">
@@ -156,7 +156,7 @@ export default function RegisterPage() {
               className="btn-gold w-100 btn-gold--lg mt-2"
               disabled={status === 'loading'}
             >
-              {status === 'loading' ? 'Creating Account…' : 'CREATE PRIVILEGE ACCOUNT'}
+              {status === 'loading' ? 'Creating Account…' : 'Create Account'}
             </button>
           </form>
 

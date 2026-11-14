@@ -78,20 +78,17 @@ export default function Navbar() {
           <NavLink to="/hotels" className={({ isActive }) => `luxury-nav-link ${isActive ? 'is-active' : ''}`}>
             Hotels
           </NavLink>
-          <a href="/#experiences" className="luxury-nav-link" onClick={(e) => scrollToSection(e, 'experiences')}>
-            Experiences
-          </a>
+          {user && (
+            <NavLink to="/bookings" className={({ isActive }) => `luxury-nav-link ${isActive ? 'is-active' : ''}`}>
+              My Bookings
+            </NavLink>
+          )}
           <a href="/#facilities" className="luxury-nav-link" onClick={(e) => scrollToSection(e, 'facilities')}>
             Facilities
           </a>
           <a href="/#about" className="luxury-nav-link" onClick={(e) => scrollToSection(e, 'about')}>
             About Us
           </a>
-          {user && (
-            <NavLink to="/membership" className={({ isActive }) => `luxury-nav-link ${isActive ? 'is-active' : ''}`}>
-              My Membership
-            </NavLink>
-          )}
         </nav>
 
         {/* Right Section: Auth & Book a Stay */}
@@ -117,16 +114,12 @@ export default function Navbar() {
               <Link to="/login" className="auth-link">
                 Sign In
               </Link>
-              <span className="auth-sep">|</span>
-              <Link to="/register" className="auth-link">
-                Join
-              </Link>
             </div>
           )}
 
           {/* Taj-inspired Gold "Book a Stay" Button */}
           <Link to="/hotels" className="btn-gold btn-book-stay">
-            BOOK A STAY
+            Book a Stay
           </Link>
 
           {/* Mobile Hamburger Toggle */}
@@ -155,27 +148,24 @@ export default function Navbar() {
           <NavLink to="/hotels" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
             Hotels
           </NavLink>
-          <a href="/#experiences" className="mobile-nav-link" onClick={(e) => { scrollToSection(e, 'experiences'); setMobileMenuOpen(false); }}>
-            Experiences
-          </a>
+          {user && (
+            <NavLink to="/bookings" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+              My Bookings
+            </NavLink>
+          )}
           <a href="/#facilities" className="mobile-nav-link" onClick={(e) => { scrollToSection(e, 'facilities'); setMobileMenuOpen(false); }}>
             Facilities
           </a>
           <a href="/#about" className="mobile-nav-link" onClick={(e) => { scrollToSection(e, 'about'); setMobileMenuOpen(false); }}>
             About Us
           </a>
-          {user && (
-            <NavLink to="/membership" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
-              My Membership
-            </NavLink>
-          )}
 
           <div className="mobile-menu-footer">
             {user ? (
               <div className="mobile-user-row">
                 {isAdmin ? (
                   <span>
-                    Signed in as <Link to="/admin" className="role-pill role-pill--admin" onClick={() => setMobileMenuOpen(false)}>ADMIN</Link>
+                    Signed in as <Link to="/admin" className="role-pill role-pill--admin" onClick={() => setMobileMenuOpen(false)}>Admin</Link>
                   </span>
                 ) : (
                   <span>Signed in</span>
@@ -195,7 +185,7 @@ export default function Navbar() {
               </div>
             )}
             <Link to="/hotels" className="btn-gold w-100 mt-2" onClick={() => setMobileMenuOpen(false)}>
-              BOOK A STAY
+              Book a Stay
             </Link>
           </div>
         </div>

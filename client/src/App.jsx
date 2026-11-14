@@ -9,6 +9,7 @@ import HotelListPage from './pages/HotelListPage';
 import HotelDetailsPage from './pages/HotelDetailsPage';
 import HotelFormPage from './pages/HotelFormPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
+import BookingsPage from './pages/BookingsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/hotels/add" element={<HotelFormPage />} />
           <Route path="/hotels/:id" element={<HotelDetailsPage />} />
           <Route path="/hotels/:id/edit" element={<HotelFormPage />} />
+          <Route path="/bookings" element={<BookingsPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />

@@ -7,6 +7,49 @@ import { showToast } from '../features/ui/uiSlice';
 import { getHotelLocation, getHotelRating, LUXURY_AMENITIES } from '../utils/hotelHelpers';
 import { formatPrice } from '../utils/format';
 
+const FACILITY_ICONS = {
+  'Royal Butler Service': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 18h14M5 18l-1.5-9 5 3.5L12 6l3.5 6.5 5-3.5L19 18H5z" />
+    </svg>
+  ),
+  'Signature Jiva Spa': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l2.4 6.9L21 10.5l-5.3 4.4 1.7 7.1-5.4-3.5-5.4 3.5 1.7-7.1-5.3-4.4 6.6-1.6L12 2z" />
+    </svg>
+  ),
+  'Signature Fine Dining': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 22h8M12 15v7M7 3h10l-1 7a4 4 0 0 1-8 0L7 3z" />
+    </svg>
+  ),
+  'Infinity Pool': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 7c3-2 5-2 8 0s5 2 8 0 5-2 8 0M2 12c3-2 5-2 8 0s5 2 8 0 5-2 8 0M2 17c3-2 5-2 8 0s5 2 8 0 5-2 8 0" />
+    </svg>
+  ),
+  'Iconic Architecture': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18M3 7h18M4 7l8-4 8 4M6 7v14M10 7v14M14 7v14M18 7v14" />
+    </svg>
+  ),
+  'Limousine Transfer': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 17h14M3 11l2-4h14l2 4v6H3v-6zm3 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm12 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+    </svg>
+  ),
+  'High-Speed Wi-Fi': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 8.5a10 10 0 0 1 14 0M8.5 12a5.5 5.5 0 0 1 7 0M12 16.5a1 1 0 1 1 0-.01" />
+    </svg>
+  ),
+  'Valet & Concierge': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A04A" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 4V2M4 18h16M5 18a7 7 0 0 1 14 0M10 4h4" />
+    </svg>
+  ),
+};
+
 export default function HomePage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +60,6 @@ export default function HomePage() {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState('2 Guests, 1 Room');
-  const [newsletterEmail, setNewsletterEmail] = useState('');
 
   // Fetch hotels for featured section if not yet loaded
   useEffect(() => {
@@ -39,16 +81,6 @@ export default function HomePage() {
     navigate('/hotels');
   };
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (!newsletterEmail || !/\S+@\S+\.\S+/.test(newsletterEmail)) {
-      dispatch(showToast('Please enter a valid email address.', 'error'));
-      return;
-    }
-    dispatch(showToast('Welcome to the Zenvora Privilege Circle. Check your inbox soon!'));
-    setNewsletterEmail('');
-  };
-
   // Featured 4 hotels from actual DB data (fallback to items slice)
   const featuredHotels = items.slice(0, 4);
 
@@ -58,7 +90,7 @@ export default function HomePage() {
         <title>Zenvora | Luxury Hotels</title>
         <meta
           name="description"
-          content="Experience exceptional luxury, timeless elegance, and heartfelt hospitality at Zenvora's world-renowned luxury hotels."
+          content="Discover exceptional luxury, timeless elegance, and heartfelt hospitality at Zenvora's world-renowned luxury hotels."
         />
       </Helmet>
 
@@ -70,13 +102,13 @@ export default function HomePage() {
         <div className="container hero-luxury__content">
           <div className="hero-badge">
             <span className="hero-badge__line" />
-            <span className="hero-badge__text">TIMELESS ELEGANCE EXCEPTIONAL EXPERIENCES</span>
+            <span className="hero-badge__text">Timeless Elegance &amp; Legendary Hospitality</span>
             <span className="hero-badge__line" />
           </div>
 
           <h1 className="hero-luxury__title">
             Where Timeless Luxury <br />
-            <span>Meets Extraordinary Experiences </span>
+            <span>Meets Legendary Hospitality</span>
           </h1>
 
           <p className="hero-luxury__desc">
@@ -95,7 +127,7 @@ export default function HomePage() {
         <div className="container hero-search-wrap">
           <form className="luxury-search-bar" onSubmit={handleSearchSubmit}>
             <div className="search-field">
-              <label htmlFor="search-destination" className="search-field__label">HOTEL OR CITY</label>
+              <label htmlFor="search-destination" className="search-field__label">Hotel or City</label>
               <input
                 id="search-destination"
                 type="text"
@@ -109,7 +141,7 @@ export default function HomePage() {
             <div className="search-divider" />
 
             <div className="search-field">
-              <label htmlFor="search-checkin" className="search-field__label">CHECK-IN</label>
+              <label htmlFor="search-checkin" className="search-field__label">Check-in</label>
               <input
                 id="search-checkin"
                 type="date"
@@ -122,7 +154,7 @@ export default function HomePage() {
             <div className="search-divider" />
 
             <div className="search-field">
-              <label htmlFor="search-checkout" className="search-field__label">CHECK-OUT</label>
+              <label htmlFor="search-checkout" className="search-field__label">Check-out</label>
               <input
                 id="search-checkout"
                 type="date"
@@ -135,7 +167,7 @@ export default function HomePage() {
             <div className="search-divider" />
 
             <div className="search-field">
-              <label htmlFor="search-guests" className="search-field__label">GUESTS & ROOMS</label>
+              <label htmlFor="search-guests" className="search-field__label">Guests & Rooms</label>
               <select
                 id="search-guests"
                 className="search-field__input search-field__select"
@@ -150,7 +182,7 @@ export default function HomePage() {
             </div>
 
             <button type="submit" className="btn-gold search-submit">
-              <span>FIND HOTELS</span>
+              <span>Find Hotels</span>
             </button>
           </form>
         </div>
@@ -160,7 +192,7 @@ export default function HomePage() {
       <section id="destinations" className="section-luxury">
         <div className="container">
           <div className="section-head text-center">
-            <span className="section-kicker">DESTINATIONS TO REMEMBER</span>
+            <span className="section-kicker">Destinations to Remember</span>
             <h2 className="section-title">Explore Iconic Destinations</h2>
             <div className="gold-ornament" />
             <p className="section-desc">
@@ -260,7 +292,7 @@ export default function HomePage() {
       <section className="section-luxury section-luxury--warm">
         <div className="container">
           <div className="section-head text-center">
-            <span className="section-kicker">SIGNATURE COLLECTION</span>
+            <span className="section-kicker">Signature Collection</span>
             <h2 className="section-title">Featured Grand Hotels</h2>
             <div className="gold-ornament" />
             <p className="section-desc">
@@ -316,68 +348,26 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
-      {/* ──────────────── 7. EXPERIENCES & SERVICES ──────────────── */}
-      <section id="experiences" className="section-luxury section-luxury--dark">
-        <div className="container">
-          <div className="section-head text-center">
-            <span className="section-kicker section-kicker--gold">SPECIAL HOTEL EXPERIENCES</span>
-            <h2 className="section-title text-white">Memorable Stays & Experiences</h2>
-            <div className="gold-ornament" />
-            <p className="section-desc text-muted-light">
-              Enjoy the warmth of Indian hospitality, relaxing stays, and beautiful moments worth remembering.
-            </p>
-          </div>
-
-          <div className="experiences-grid">
-            <div className="experience-item">
-              <div className="experience-item__icon">👑</div>
-              <h3 className="experience-item__title">Dedicated Guest Services</h3>
-              <p className="experience-item__desc">
-                From helping you settle in to arranging special dining experiences, our team is always ready to make your stay comfortable and enjoyable.              </p>
-            </div>
-
-            <div className="experience-item">
-              <div className="experience-item__icon">✨</div>
-              <h3 className="experience-item__title">Wellness & Spa Experiences</h3>
-              <p className="experience-item__desc">
-                Enjoy relaxing spa treatments, calming surroundings, and peaceful moments that refresh your mind and body              </p>
-            </div>
-
-            <div className="experience-item">
-              <div className="experience-item__icon">🍷</div>
-              <h3 className="experience-item__title">SPECIAL DINING MOMENTS</h3>
-              <p className="experience-item__desc">
-                From traditional recipes to modern favourites, enjoy delicious food made with care and passion.              </p>
-            </div>
-
-            <div className="experience-item">
-              <div className="experience-item__icon">⛵</div>
-              <h3 className="experience-item__title">UNFORGETTABLE BOAT RIDES</h3>
-              <p className="experience-item__desc">
-                Enjoy peaceful boat rides, beautiful sunset views, and relaxing moments by the water.              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ──────────────── INCLUDED AMENITIES & FACILITIES ──────────────── */}
-      <section id="facilities" className="section-luxury section-luxury--warm">
+      <section id="facilities" className="section-luxury section-facilities--dark">
         <div className="container">
           <div className="section-head text-center">
-            <span className="section-kicker">DISTINGUISHED PRIVILEGES</span>
-            <h2 className="section-title">Included Amenities &amp; Facilities</h2>
-            <div className="gold-ornament" />
-            <p className="section-desc">
-              Experience the highest standard of luxury living with our complimentary signature amenities and bespoke hotel services.
+            <span className="facilities-kicker">Distinguished Privileges</span>
+            <h2 className="facilities-title">Included Amenities &amp; Facilities</h2>
+            <div className="facilities-divider" />
+            <p className="facilities-desc">
+              Enjoy the highest standard of luxury living with our complimentary signature amenities and bespoke hotel services.
             </p>
           </div>
 
           <div className="facilities-homepage-grid">
             {LUXURY_AMENITIES.map((item) => (
               <div key={item.name} className="facility-card">
-                <span className="facility-card__icon">{item.icon}</span>
+                <div className="facility-card__icon-wrap">
+                  <span className="facility-card__icon" aria-hidden="true">
+                    {FACILITY_ICONS[item.name] || item.icon}
+                  </span>
+                </div>
                 <div className="facility-card__info">
                   <h3 className="facility-card__title">{item.name}</h3>
                   <p className="facility-card__desc">{item.desc}</p>
@@ -393,7 +383,7 @@ export default function HomePage() {
         <div className="container">
           <div className="why-zenvora-grid">
             <div className="why-zenvora__content">
-              <span className="section-kicker">A TRADITION OF WARM WELCOMES</span>
+              <span className="section-kicker">A Tradition of Warm Welcomes</span>
               <h2 className="section-title">The Essence of Zenvora</h2>
               <div className="gold-ornament" style={{ margin: '1rem 0 1.5rem' }} />
 
@@ -422,7 +412,7 @@ export default function HomePage() {
                   <div className="pillar__num">03</div>
                   <div className="pillar__text">
                     <h4>Memorable Dining Moments</h4>
-                    <p>From traditional Indian cuisine to international dishes, enjoy dining experiences for every taste.</p>
+                    <p>From traditional Indian cuisine to international dishes, enjoy dining crafted for every taste.</p>
                   </div>
                 </div>
               </div>
